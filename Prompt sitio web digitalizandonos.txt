@@ -1,0 +1,221 @@
+🧠 Prompt Maestro – Digitalizandonos 2.0 (para Cursor)
+
+Crea una landing page moderna y animada para la empresa Digitalizándonos, usando React, TailwindCSS y Framer Motion.
+El sitio debe ser de una sola página con efectos visuales atractivos tipo https://www.jeton.com/es
+.
+
+⚙️ Stack y Arquitectura
+
+React + Vite
+
+TailwindCSS
+
+Framer Motion (para animaciones de scroll, fade-in, parallax y movimiento dinámico)
+
+React Router (solo si se requiere manejar popups de políticas como rutas modales)
+
+Archivo config.json en la raíz para parametrizar:
+
+Colores primarios, secundarios, gradientes
+
+Tipografía global (Orbitron por defecto)
+
+Textos clave (nombre agente, teléfono, dirección, CTA, etc.)
+
+Enlaces de WhatsApp, correo y redes sociales
+
+📁 Estructura de carpetas
+src/
+ ├─ assets/
+ │   ├─ logo.png
+ │   ├─ video1.mp4
+ │   ├─ video2.mp4
+ │   └─ bg-shapes.svg
+ ├─ components/
+ │   ├─ Navbar.jsx
+ │   ├─ Hero.jsx
+ │   ├─ SectionAgents.jsx
+ │   ├─ SectionMarketing.jsx
+ │   ├─ CTAButton.jsx
+ │   ├─ Footer.jsx
+ │   ├─ PopupPolicies.jsx
+ │   └─ ScrollReveal.jsx
+ ├─ config.json
+ ├─ App.jsx
+ ├─ main.jsx
+ └─ styles/
+     └─ globals.css
+
+🎨 Estilo general
+
+Modo oscuro permanente
+
+Fondo degradado negro → morado profundo, con acentos amarillo oscuro y toques neón.
+
+Usa Orbitron para títulos y Poppins para párrafos.
+
+Textos grandes, legibles, minimalistas y con “startup energy”.
+
+Efectos suaves de scroll y hover tipo Jeton (motion.div + parallax + opacidad dinámica).
+
+Gradientes animados sutiles en botones y encabezados.
+
+💬 Contenido de la landing
+🧭 Header / Navbar
+
+Logo de Digitalizándonos (desde assets/logo.png)
+
+Menú con scroll suave a secciones: “Home”, “Quiénes Somos”, “Servicios”, “Contacto”
+
+Botón destacado “Agendar con Sam” (CTA que apunta a config.whatsapp_url)
+
+Navbar semi-transparente con blur.
+
+🚀 Hero Section
+
+Fondo con gradiente animado y formas 3D flotantes.
+
+Título principal:
+
+Asistentes Virtuales
+<span style="background: linear-gradient(to right, #ffb703, #a855f7, #2563eb); -webkit-background-clip: text; color: transparent;">para tu empresa</span>
+
+Subtítulo:
+
+“Automatiza tus conversaciones, agenda reuniones y sorprende a tus clientes con Sam, tu nuevo agente virtual.”
+
+Botón CTA: “Habla con Sam” → abre WhatsApp.
+
+A la derecha, placeholder para video hero (especificar: video.mp4, 1920x1080, loop, sin sonido, 8s máx).
+
+🤖 Sección 1 – Agentes Virtuales
+
+Animación de entrada desde la izquierda.
+
+Copy:
+
+“Creamos agentes virtuales personalizados que atienden a tus clientes, agendan citas, responden consultas y notifican en tiempo real. Integraciones con WhatsApp, Telegram, Google Calendar y más.”
+
+Mostrar 3 “cards” animadas:
+
+“Atiende 24/7”
+
+“Agenda automáticamente”
+
+“Integrado a tu negocio”
+
+Video o GIF sugerido: “pantalla de chatbot en acción o calendario llenándose automáticamente”.
+
+📈 Sección 2 – Marketing Digital
+
+Transición visual con fondo degradado dinámico.
+
+Copy principal:
+
+“¿Y con quién hablará tu agente si no tienes nuevos clientes?”
+
+Luego:
+
+“Te ayudamos a crecer en Instagram y Meta.
+Publicamos historias todos los días, creamos reels semanales y gestionamos tus campañas de Google Ads y Meta con transparencia total.”
+
+Mostrar cards o íconos:
+
+“Gestión de redes”
+
+“Reels profesionales”
+
+“Campañas pagadas (20% fee)”
+
+“Producción de contenido”
+
+Placeholder para video de sesión de grabación (clip horizontal 1920x1080, 10s, estilo b-roll profesional).
+
+🌟 CTA Final
+
+Texto grande y centrado:
+
+“Deja que Sam automatice tu empresa.”
+“Agenda tu consulta gratis hoy.”
+
+Botón CTA con gradiente:
+Habla con Sam → (config.whatsapp_url)
+
+⚙️ Footer
+
+Fondo negro sólido.
+
+Contiene:
+
+Redes sociales (íconos configurables en config.json)
+
+Correo (info@digitalizandonos.cl)
+
+Dirección (Av. Apoquindo 6410, Of. 1004)
+
+WhatsApp (+56 9 5185 5951)
+
+Enlaces:
+
+“Política de privacidad”
+
+“Términos y condiciones”
+
+“Cookies”
+
+Cada uno abre un PopupPolicies.jsx (ventana modal animada con blur, contenido cargado desde archivos markdown o texto plano dentro de /src/data/policies).
+
+⚙️ config.json (ejemplo)
+{
+  "colors": {
+    "primary": "#8b5cf6",
+    "secondary": "#ffb703",
+    "background": "#0a0118",
+    "gradient": "linear-gradient(90deg, #8b5cf6, #ffb703)"
+  },
+  "fonts": {
+    "heading": "Orbitron",
+    "body": "Poppins"
+  },
+  "contact": {
+    "whatsapp_url": "https://wa.me/+56951855951?text=Hola,%20Quisiera%20hacer%20una%20Consulta",
+    "email": "info@digitalizandonos.cl",
+    "address": "Av. Apoquindo 6410, Of. 1004"
+  },
+  "socials": {
+    "instagram": "https://instagram.com/digitalizandonos",
+    "facebook": "https://facebook.com/digitalizandonos",
+    "linkedin": ""
+  },
+  "agent": {
+    "name": "Sam",
+    "description": "Tu agente virtual de Digitalizándonos"
+  }
+}
+
+🌈 Animaciones sugeridas (Framer Motion)
+
+whileInView={{ opacity: 1, y: 0 }} con initial={{ opacity: 0, y: 50 }}
+
+Transiciones suaves de 0.6s
+
+Parallax leve en background shapes
+
+Hover effects con escala y glow
+
+🎬 Videos a preparar (luego tú los generas con IA)
+
+Hero: laptop + código o IA escribiendo (8s, sin sonido).
+
+Agentes Virtuales: chat automatizado / agenda llenándose (6s).
+
+Marketing Digital: grabación en local con cámara 360 (8s).
+(Cursor debe dejar comentarios en el código indicando specs de resolución y duración).
+
+💡 Tono del copy
+
+Usar lenguaje cercano, atrevido, creativo y directo.
+Ejemplo de tono:
+
+“Somos Digitalizándonos. Creamos agentes que trabajan por ti mientras duermes.”
+“Tu marca necesita presencia, y nosotros la multiplicamos.”
