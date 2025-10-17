@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaSignInAlt } from 'react-icons/fa'
 import config from '../config.json'
 
 const Navbar = () => {
@@ -51,6 +51,18 @@ const Navbar = () => {
               {item.name}
             </a>
           ))}
+          
+          {/* Botón Intranet */}
+          <a
+            href="https://d19380l5koxarb.cloudfront.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 px-5 py-2.5 glass-effect rounded-lg font-medium hover:bg-white/10 transition-all duration-300 border border-white/20"
+          >
+            <FaSignInAlt className="text-lg" />
+            <span>Intranet</span>
+          </a>
+          
           <a
             href={config.contact.whatsapp_url}
             target="_blank"
@@ -89,6 +101,18 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
+            
+            {/* Botón Intranet Mobile */}
+            <a
+              href="https://d19380l5koxarb.cloudfront.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center space-x-2 px-6 py-3 glass-effect rounded-lg font-medium border border-white/20"
+            >
+              <FaSignInAlt />
+              <span>Intranet</span>
+            </a>
+            
             <a
               href={config.contact.whatsapp_url}
               target="_blank"
