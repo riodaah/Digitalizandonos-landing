@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaInstagram, FaFacebook, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import config from '../config.json'
 
 const Footer = ({ openPolicy }) => {
@@ -82,16 +82,6 @@ const Footer = ({ openPolicy }) => {
                   className="text-2xl text-gray-400 hover:text-secondary transition-colors"
                 >
                   <FaInstagram />
-                </a>
-              )}
-              {config.socials.facebook && (
-                <a
-                  href={config.socials.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-2xl text-gray-400 hover:text-secondary transition-colors"
-                >
-                  <FaFacebook />
                 </a>
               )}
               {config.socials.linkedin && (
