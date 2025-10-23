@@ -59,9 +59,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 leading-relaxed"
           >
-            Automatiza tus conversaciones, agenda reuniones y sorprende a tus clientes con{' '}
-            <span className="text-secondary font-semibold">{config.agent.name}</span>, 
-            tu nuevo agente virtual.
+            Revoluciona tu empresa con la combinación perfecta: agentes virtuales que nunca duermen y marketing digital que siempre vende.
           </motion.p>
 
           <motion.div
