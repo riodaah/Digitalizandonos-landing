@@ -59,7 +59,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 leading-relaxed"
           >
-            Revoluciona tu empresa con la combinación perfecta: agentes virtuales que nunca duermen y marketing digital que siempre vende.
+            Desde chatbots inteligentes hasta campañas publicitarias, te ayudamos a digitalizar cada aspecto de tu negocio.
           </motion.p>
 
           <motion.div
