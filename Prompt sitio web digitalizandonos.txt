@@ -78,7 +78,7 @@ Fondo con gradiente animado y formas 3D flotantes.
 Título principal:
 
 Asistentes Virtuales
-<span style="background: linear-gradient(to right, #ffb703, #a855f7, #2563eb); -webkit-background-clip: text; color: transparent;">para tu empresa</span>
+<span style="background: linear-gradient(to right, #ffb703, #a855f7, #2563eb); -webkit-background-clip: text; color: transparent;">y Marketing Digital</span>
 
 Subtítulo:
 

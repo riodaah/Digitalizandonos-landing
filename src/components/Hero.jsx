@@ -49,7 +49,7 @@ const Hero = () => {
           >
             Asistentes Virtuales{' '}
             <span className="gradient-text">
-              para tu empresa
+              y Marketing Digital
             </span>
           </motion.h1>
 
