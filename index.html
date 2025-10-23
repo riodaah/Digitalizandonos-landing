@@ -19,6 +19,22 @@
       gtag('config', 'G-3FWDJYCQET');
     </script>
     
+    <!-- Event snippet for Botón-Whatsaap conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16569624100/eussCLrP37AZEKTMgd09',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
     <meta charset="UTF-8" />
     
     <!-- Favicon -->

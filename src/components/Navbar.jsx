@@ -15,6 +15,17 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleWhatsAppClick = (e) => {
+    e.preventDefault()
+    // Llamar a la función de tracking de Google Ads
+    if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+      window.gtag_report_conversion(config.contact.whatsapp_url)
+    } else {
+      // Fallback si no está disponible el tracking
+      window.open(config.contact.whatsapp_url, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   const menuItems = [
     { name: 'Home', href: '#home' },
     { name: 'Quiénes Somos', href: '#agentes' },
@@ -67,6 +78,7 @@ const Navbar = () => {
             href={config.contact.whatsapp_url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
             className="px-6 py-3 bg-gradient-to-r from-secondary to-primary rounded-full font-semibold hover:scale-105 transition-transform duration-300 glow-hover"
           >
             Agendar con {config.agent.name}
@@ -117,6 +129,7 @@ const Navbar = () => {
               href={config.contact.whatsapp_url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
               className="px-6 py-3 bg-gradient-to-r from-secondary to-primary rounded-full font-semibold text-center"
             >
               Agendar con {config.agent.name}
