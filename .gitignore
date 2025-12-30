@@ -23,3 +23,13 @@ test-verify/
 # Environment
 .env
 .env.local
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+*-firebase-adminsdk-*.json
+
+# Firebase cache
+.firebase-cache/
