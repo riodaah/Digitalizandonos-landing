@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { FaBars, FaTimes, FaSignInAlt } from 'react-icons/fa'
 import config from '../config.json'
 
@@ -8,142 +7,72 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
+    const handleScroll = () => setScrolled(window.scrollY > 24)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const handleWhatsAppClick = (e) => {
     e.preventDefault()
-    // Llamar a la función de tracking de Google Ads
     if (typeof window !== 'undefined' && window.gtag_report_conversion) {
       window.gtag_report_conversion(config.contact.whatsapp_url)
     } else {
-      // Fallback si no está disponible el tracking
       window.open(config.contact.whatsapp_url, '_blank', 'noopener,noreferrer')
     }
   }
 
   const menuItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Quiénes Somos', href: '#agentes' },
-    { name: 'Servicios', href: '#marketing' },
-    { name: 'Contacto', href: '#contacto' },
+    { name: 'Agentes', href: '#skills' },
+    { name: 'Cómo funciona', href: '#como' },
+    { name: 'Industrias', href: '#industrias' },
+    { name: 'Planes', href: '#planes' },
+    { name: 'Quiénes somos', href: '#nosotros' },
   ]
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass-effect py-4' : 'bg-transparent py-6'
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav ${scrolled ? 'py-2' : 'py-3'}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" className="flex items-center space-x-3">
-          <img 
-            src="/Images/Logo oficial hd.png" 
-            alt="Digitalizándonos" 
-            className="h-12 w-auto"
-          />
+        <a href="#home" className="flex items-center">
+          <img src="/Images/Logo oficial hd.png" alt="Digitalizándonos" className="h-10 w-auto" />
         </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center gap-7">
           {menuItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-white hover:text-secondary transition-colors duration-300 font-medium"
-            >
+            <a key={item.name} href={item.href}
+               className="text-[14.5px] font-medium text-ink-soft hover:text-ink transition-colors">
               {item.name}
             </a>
           ))}
-          
-          {/* Botón Intranet */}
-          <a
-            href="https://intranet-digitalizandonos.web.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 px-5 py-2.5 glass-effect rounded-lg font-medium hover:bg-white/10 transition-all duration-300 border border-white/20"
-          >
-            <FaSignInAlt className="text-lg" />
-            <span>Intranet</span>
+          <a href="https://intranet-digitalizandonos.web.app/" target="_blank" rel="noopener noreferrer"
+             className="flex items-center gap-2 text-[14px] font-medium text-ink-soft hover:text-primary transition-colors">
+            <FaSignInAlt /> Intranet
           </a>
-          
-          <a
-            href={config.contact.whatsapp_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={handleWhatsAppClick}
-            className="px-6 py-3 bg-gradient-to-r from-secondary to-primary rounded-full font-semibold hover:scale-105 transition-transform duration-300 glow-hover"
-          >
-            Agendar con {config.agent.name}
+          <a href={config.contact.whatsapp_url} onClick={handleWhatsAppClick}
+             className="btn-primary !py-2.5 !px-5 text-[14px]">
+            Agenda una demo
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-white text-2xl"
-        >
+        <button className="lg:hidden text-2xl text-ink" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menú">
           {mobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden glass-effect mt-4"
-        >
-          <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
-            {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-white hover:text-secondary transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </a>
-            ))}
-            
-            {/* Botón Intranet Mobile */}
-            <a
-              href="https://intranet-digitalizandonos.web.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 px-6 py-3 glass-effect rounded-lg font-medium border border-white/20"
-            >
-              <FaSignInAlt />
-              <span>Intranet</span>
-            </a>
-            
-            <a
-              href={config.contact.whatsapp_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleWhatsAppClick}
-              className="px-6 py-3 bg-gradient-to-r from-secondary to-primary rounded-full font-semibold text-center"
-            >
-              Agendar con {config.agent.name}
-            </a>
-          </div>
-        </motion.div>
+        <div className="lg:hidden bg-white border-t border-line px-6 py-4 flex flex-col gap-4 shadow-card">
+          {menuItems.map((item) => (
+            <a key={item.name} href={item.href} onClick={() => setMobileMenuOpen(false)}
+               className="text-[15px] font-medium text-ink-soft">{item.name}</a>
+          ))}
+          <a href="https://intranet-digitalizandonos.web.app/" target="_blank" rel="noopener noreferrer"
+             className="text-[15px] font-medium text-ink-soft flex items-center gap-2"><FaSignInAlt /> Intranet</a>
+          <a href={config.contact.whatsapp_url} onClick={handleWhatsAppClick} className="btn-primary text-center">
+            Agenda una demo
+          </a>
+        </div>
       )}
-    </motion.nav>
+    </nav>
   )
 }
 
 export default Navbar
-
-
-
-
-

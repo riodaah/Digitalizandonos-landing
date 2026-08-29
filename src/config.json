@@ -1,29 +1,22 @@
 {
   "colors": {
-    "primary": "#8b5cf6",
-    "secondary": "#ffb703",
-    "background": "#0a0118",
-    "gradient": "linear-gradient(90deg, #8b5cf6, #ffb703)"
+    "primary": "#0a5cff",
+    "secondary": "#00c2d4",
+    "background": "#ffffff",
+    "gradient": "linear-gradient(120deg, #0a5cff, #00c2d4)"
   },
   "fonts": {
-    "heading": "Orbitron",
-    "body": "Poppins"
+    "heading": "Schibsted Grotesk",
+    "body": "Inter"
   },
   "contact": {
-    "whatsapp_url": "https://wa.me/56951855951?text=Hola,%20Quisiera%20hacer%20una%20Consulta",
+    "whatsapp_url": "https://wa.me/56951855951?text=Hola,%20quiero%20una%20demo%20de%20un%20agente%20IA",
     "phone": "+56 9 5185 5951",
     "email": "info@digitalizandonos.cl",
-    "address": "Av. Apoquindo 6410, Of. 1004"
+    "address": "Av. Apoquindo 6410, Of. 1004, Las Condes"
   },
   "socials": {
     "instagram": "https://www.instagram.com/digitalizandonos.cl",
     "linkedin": ""
-  },
-  "agent": {
-    "name": "Sam",
-    "description": "Tu agente virtual de Digitalizándonos"
   }
 }
-
-
-

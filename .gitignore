@@ -19,6 +19,7 @@ Thumbs.db
 test-extract/
 test-verify/
 *.zip
+digitalizandonos-landing-v2-src_2/
 
 # Environment
 .env

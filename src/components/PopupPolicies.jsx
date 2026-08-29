@@ -15,7 +15,7 @@ const PopupPolicies = ({ type, onClose }) => {
       title: 'Política de Privacidad',
       content: `
         <h3>1. Información que recopilamos</h3>
-        <p>En Digitalizándonos recopilamos información personal necesaria para proporcionar nuestros servicios de asistentes virtuales y marketing digital.</p>
+        <p>En Digitalizándonos recopilamos la información necesaria para proporcionar nuestros servicios de agentes de inteligencia artificial y automatización.</p>
         
         <h3>2. Uso de la información</h3>
         <p>Utilizamos tu información para:</p>
@@ -25,8 +25,8 @@ const PopupPolicies = ({ type, onClose }) => {
           <li>Cumplir con obligaciones legales</li>
         </ul>
         
-        <h3>3. Protección de datos</h3>
-        <p>Implementamos medidas de seguridad para proteger tu información personal.</p>
+        <h3>3. Protección de datos e inteligencia artificial</h3>
+        <p>Implementamos medidas de seguridad para proteger tu información personal. La información de tu empresa y de tus clientes (conversaciones, documentos, bases de datos) se utiliza exclusivamente para la operación de tu agente. <strong>Jamás entrenamos modelos de inteligencia artificial con tus datos confidenciales.</strong></p>
         
         <h3>4. Contacto</h3>
         <p>Para consultas sobre privacidad: info@digitalizandonos.cl</p>
@@ -41,14 +41,14 @@ const PopupPolicies = ({ type, onClose }) => {
         <h3>2. Servicios</h3>
         <p>Digitalizándonos ofrece:</p>
         <ul>
-          <li>Desarrollo de asistentes virtuales con IA</li>
-          <li>Gestión de marketing digital</li>
-          <li>Producción de contenido</li>
-          <li>Gestión de campañas publicitarias</li>
+          <li>Agentes de inteligencia artificial para WhatsApp, Instagram y correo</li>
+          <li>Agentes de automatización de procesos internos</li>
+          <li>Integraciones con CRM, ERP, APIs y bases de datos</li>
+          <li>Implementación, soporte y mejora continua mensual</li>
         </ul>
         
-        <h3>3. Tarifas</h3>
-        <p>Las campañas publicitarias tienen un fee del 20% sobre el presupuesto invertido.</p>
+        <h3>3. Tarifas y planes</h3>
+        <p>Los servicios se contratan mediante una implementación inicial única y una suscripción mensual según el plan elegido. Los planes no tienen contrato de permanencia y consideran un volumen de conversaciones mensuales; si se supera, se acordará el ajuste de plan con el cliente.</p>
         
         <h3>4. Propiedad intelectual</h3>
         <p>El contenido y código desarrollado permanece bajo propiedad de acuerdo a lo especificado en cada contrato.</p>
@@ -89,21 +89,21 @@ const PopupPolicies = ({ type, onClose }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
       >
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           onClick={(e) => e.stopPropagation()}
-          className="glass-effect rounded-2xl max-w-3xl w-full max-h-[80vh] overflow-hidden"
+          className="bg-white rounded-2xl max-w-3xl w-full max-h-[80vh] overflow-hidden shadow-2xl"
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-white/10">
+          <div className="flex items-center justify-between p-6 border-b border-line">
             <h2 className="text-2xl font-bold">{policy.title}</h2>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-white transition-colors text-2xl"
+              className="text-slate-400 hover:text-ink transition-colors text-2xl"
             >
               <FaTimes />
             </button>
@@ -112,7 +112,7 @@ const PopupPolicies = ({ type, onClose }) => {
           {/* Content */}
           <div className="p-6 overflow-y-auto max-h-[calc(80vh-120px)]">
             <div 
-              className="prose prose-invert prose-headings:text-white prose-p:text-gray-300 prose-li:text-gray-300 max-w-none"
+              className="space-y-3 text-[15px] text-ink-soft [&_h3]:text-ink [&_h3]:font-semibold [&_h3]:text-[17px] [&_h3]:mt-5 [&_ul]:list-disc [&_ul]:pl-6"
               dangerouslySetInnerHTML={{ __html: policy.content }}
             />
           </div>

@@ -1,61 +1,39 @@
-import { motion } from 'framer-motion'
-import CTAButton from './CTAButton'
 import ScrollReveal from './ScrollReveal'
 import config from '../config.json'
 
 const CTAFinal = () => {
+  const handleClick = (e) => {
+    e.preventDefault()
+    const url = 'https://wa.me/56951855951?text=' + encodeURIComponent('Hola, quiero agendar la demo gratuita de 20 minutos')
+    if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+      window.gtag_report_conversion(url)
+    } else {
+      window.open(url, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   return (
-    <section id="contacto" className="relative py-32 overflow-hidden">
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 blur-3xl"
-      />
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="contacto-final" className="py-24">
+      <div className="container mx-auto px-6">
         <ScrollReveal>
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <motion.div
-              whileInView={{ scale: [0.8, 1] }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
-              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-                Deja que <span className="gradient-text">{config.agent.name}</span>
-                <br />automatice tu empresa.
-              </h2>
-              <p className="text-2xl md:text-3xl text-gray-300">
-                Agenda tu consulta gratis hoy.
+          <div className="relative overflow-hidden rounded-[32px] px-8 py-16 md:py-20 text-center text-white"
+               style={{ background: 'linear-gradient(135deg,#08234f 0%,#0a5cff 70%,#00c2d4 130%)' }}>
+            <div className="absolute -top-52 -right-24 w-[500px] h-[500px] rounded-full bg-white/5" />
+            <div className="relative">
+              <h2 className="text-[30px] md:text-[42px] font-bold text-white">Mira un agente trabajando con tu propio caso</h2>
+              <p className="text-white/85 text-[17px] max-w-[560px] mx-auto mt-4 mb-9">
+                Agenda una demo gratuita de 20 minutos. Te mostramos un agente real cotizando, agendando
+                y registrando clientes — y evaluamos juntos cuál plan le conviene a tu negocio.
               </p>
-            </motion.div>
-
-            <motion.div
-              whileInView={{ y: [20, 0], opacity: [0, 1] }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <CTAButton text={`Habla con ${config.agent.name}`} />
-            </motion.div>
-
-            <motion.p
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-gray-400 text-lg"
-            >
-              Respuesta en menos de 24 horas
-            </motion.p>
+              <a href="#" onClick={handleClick}
+                 className="inline-flex items-center justify-center font-semibold text-[15px] px-7 py-3.5 rounded-full bg-white text-primary-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl">
+                Agendar demo gratuita
+              </a>
+            </div>
           </div>
         </ScrollReveal>
       </div>
     </section>
   )
 }
-
 export default CTAFinal
-
-
-
-
-
