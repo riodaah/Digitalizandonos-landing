@@ -41,7 +41,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <header id="home" className="relative overflow-hidden pt-36 pb-24 md:pt-40 md:pb-28">
+    <header id="hero-detalle" className="relative overflow-hidden pt-36 pb-24 md:pt-40 md:pb-28">
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(700px 420px at 15% -10%, rgba(10,92,255,.07), transparent 60%), radial-gradient(600px 400px at 90% 10%, rgba(0,194,212,.07), transparent 60%)' }} />
       <div className="container mx-auto px-6 relative grid md:grid-cols-2 gap-14 items-center">
