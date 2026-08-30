@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import { FaBars, FaTimes, FaSignInAlt } from 'react-icons/fa'
+import { INTRO_STAGES } from './introStages'
 import config from '../config.json'
 
 const Navbar = ({ introProgress = 1 }) => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const safeProgress = Number.isFinite(introProgress) ? introProgress : 1
-  const showHeader = safeProgress >= 0.74
-  const showCta = safeProgress >= 0.82
-  const showMenu = safeProgress >= 0.9
+  const showHeader = safeProgress >= INTRO_STAGES.bar
+  const showCta = safeProgress >= INTRO_STAGES.cta
+  const showMenu = safeProgress >= INTRO_STAGES.menu
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24)
@@ -42,7 +43,7 @@ const Navbar = ({ introProgress = 1 }) => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#home"
-          className={`flex items-center transition-all duration-500 ${showMenu ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
+          className={`flex items-center transition-all duration-500 ${showHeader ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
         >
           <img src="/Images/Logo oficial hd.png" alt="Digitalizándonos" className="h-10 w-auto" />
         </a>

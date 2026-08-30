@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar'
-import ScrollScrubHero from './components/ScrollScrubHero'
+import IntroSequence from './components/IntroSequence'
+import { INTRO_STAGES } from './components/introStages'
 import Hero from './components/Hero'
 import StripPartners from './components/StripPartners'
 import SectionChannels from './components/SectionChannels'
@@ -22,7 +23,7 @@ function App() {
   const [showPolicy, setShowPolicy] = useState(false)
   const [policyType, setPolicyType] = useState('')
   const [introProgress, setIntroProgress] = useState(0)
-  const showGlobalActions = introProgress >= 0.92
+  const showGlobalActions = introProgress >= INTRO_STAGES.floating
 
   const openPolicy = (type) => {
     setPolicyType(type)
@@ -32,12 +33,13 @@ function App() {
   return (
     <div className="relative min-h-screen bg-white text-ink">
       <Navbar introProgress={introProgress} />
-      <ScrollScrubHero onProgressChange={setIntroProgress} />
+      <IntroSequence onProgressChange={setIntroProgress} />
       <Hero />
-      <StripPartners />
+      <StripPartners variant="partners" />
       <SectionChannels />
       <SectionSkills />
       <SectionProcess />
+      <StripPartners variant="integrations" />
       <SectionInternalAgents />
       <SectionIndustries />
       <SectionSecurity />
