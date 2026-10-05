@@ -16,9 +16,9 @@ const SERVICES = [
   },
   {
     icon: <FaUsers />,
-    title: 'Implementación de CRM',
-    text: 'Configuramos tu CRM, migramos tus datos, automatizamos el seguimiento de ventas y capacitamos a tu equipo.',
-    tags: ['Pipedrive', 'Embudos', 'Reportes'],
+    title: 'Implementación de Pipedrive CRM',
+    text: 'Configuramos Pipedrive, migramos tus datos, automatizamos el seguimiento de ventas y capacitamos a tu equipo comercial.',
+    tags: ['Pipedrive', 'Embudos', 'API'],
   },
   {
     icon: <FaPlug />,

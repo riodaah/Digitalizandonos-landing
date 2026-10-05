@@ -15,9 +15,10 @@ const SectionAbout = () => (
         <span className="eyebrow">Nosotros</span>
         <h2 className="text-[30px] md:text-[40px] font-bold">Somos Darmi</h2>
         <p className="text-[16.5px] text-ink-soft mt-5">
-          Una agencia chilena de automatización con IA. Ayudamos a pymes y empresas de Chile
-          y LATAM a trabajar mejor conectando inteligencia artificial, automatización y CRM
-          a sus procesos reales.
+          Una agencia chilena de automatización con IA y especialistas en Pipedrive. Ayudamos a
+          pymes y empresas de Chile y LATAM a trabajar mejor conectando inteligencia artificial,
+          automatización y CRM a sus procesos reales, de punta a punta: diagnóstico,
+          implementación, integración y soporte.
         </p>
         <p className="text-[16.5px] text-ink-soft mt-4">
           Antes nos conocías como <strong className="text-ink">Digitalizándonos</strong>. Mismo equipo,

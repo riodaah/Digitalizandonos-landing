@@ -5,6 +5,7 @@ import { INTRO_STAGES } from './components/introStages'
 import Hero from './components/Hero'
 import StripPartners from './components/StripPartners'
 import SectionServices from './components/SectionServices'
+import SectionStack from './components/SectionStack'
 import SectionProcess from './components/SectionProcess'
 import SectionAbout from './components/SectionAbout'
 import SectionContact from './components/SectionContact'
@@ -32,6 +33,7 @@ function App() {
         <Hero />
         <StripPartners />
         <SectionServices />
+        <SectionStack />
         <SectionProcess />
         <SectionAbout />
         <SectionContact />

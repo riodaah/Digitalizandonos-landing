@@ -19,6 +19,7 @@ const Footer = ({ openPolicy }) => (
           <h4 className="font-display font-bold text-white mb-4">Darmi</h4>
           <div className="space-y-2.5 text-sm">
             <a href="#servicios" className="block text-slate-400 hover:text-white transition-colors">Servicios</a>
+            <a href="#stack" className="block text-slate-400 hover:text-white transition-colors">Stack tecnológico</a>
             <a href="#como" className="block text-slate-400 hover:text-white transition-colors">Cómo trabajamos</a>
             <a href="#nosotros" className="block text-slate-400 hover:text-white transition-colors">Nosotros</a>
             <button onClick={() => openPolicy('privacy')} className="block text-slate-400 hover:text-white transition-colors">Política de privacidad</button>

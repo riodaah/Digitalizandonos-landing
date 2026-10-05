@@ -6,6 +6,7 @@ import { openWhatsApp } from '../lib/whatsapp'
 
 const menuItems = [
   { name: 'Servicios', href: '#servicios' },
+  { name: 'Stack', href: '#stack' },
   { name: 'Cómo trabajamos', href: '#como' },
   { name: 'Nosotros', href: '#nosotros' },
   { name: 'Contacto', href: '#contacto' },

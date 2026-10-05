@@ -7,7 +7,7 @@ const STEPS = [
 ]
 
 const SectionProcess = () => (
-  <section id="como" className="py-24 bg-bg-soft border-y border-line">
+  <section id="como" className="py-24">
     <div className="container mx-auto px-6">
       <ScrollReveal className="text-center">
         <span className="eyebrow">Cómo trabajamos</span>
