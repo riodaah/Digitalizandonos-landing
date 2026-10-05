@@ -1,83 +1,22 @@
-# Digitalizándonos - Landing Page
+# Darmi — darmi.cl
 
-Landing page moderna y animada para Digitalizándonos, empresa de asistentes virtuales con IA y marketing digital.
+Sitio de presentación de **Darmi**, agencia de automatización con IA (antes Digitalizándonos).
 
-## 🚀 Stack Tecnológico
+- Stack: React 18 + Vite + Tailwind CSS + Framer Motion
+- Hosting: Vercel (proyecto `digitalizandonos-landing`), despliegue automático desde `main`
+- Dominio principal: https://www.darmi.cl (darmi.cl redirige a www)
 
-- **React** + **Vite** - Framework y build tool
-- **TailwindCSS** - Estilos y diseño responsivo
-- **Framer Motion** - Animaciones y transiciones
-- **React Icons** - Iconografía
-
-## 📦 Instalación
+## Desarrollo
 
 ```bash
 npm install
+npm run dev      # servidor local
+npm run build    # build de producción en dist/
 ```
 
-## 🏃 Desarrollo
+## Dónde editar
 
-```bash
-npm run dev
-```
-
-El sitio estará disponible en `http://localhost:5173`
-
-## 🏗️ Build
-
-```bash
-npm run build
-```
-
-## ⚙️ Configuración
-
-Edita `src/config.json` para personalizar:
-
-- Colores y gradientes
-- Información de contacto
-- Enlaces de redes sociales
-- Texto del agente virtual
-
-## 📁 Estructura
-
-```
-src/
-├── components/       # Componentes React
-├── styles/          # Estilos globales
-├── data/            # Archivos de políticas
-├── config.json      # Configuración parametrizable
-├── App.jsx          # Componente principal
-└── main.jsx         # Punto de entrada
-```
-
-## 🎨 Características
-
-- ✨ Animaciones suaves con scroll reveal
-- 🌙 Modo oscuro permanente
-- 📱 Diseño 100% responsive
-- 🎭 Efectos visuales tipo Jeton.com
-- ⚡ Optimizado para rendimiento
-- 🤖 Integración con WhatsApp
-
-## 🎬 Videos Requeridos
-
-El diseño incluye placeholders para 3 videos:
-
-1. **Hero**: 1920x1080, 8s, loop, sin sonido (IA/código en acción)
-2. **Agentes**: 1920x1080, 6s, chatbot automatizado
-3. **Marketing**: 1920x1080, 10s, behind the scenes producción
-
-## 📧 Contacto
-
-- Email: info@digitalizandonos.cl
-- WhatsApp: +56 9 5185 5951
-- Dirección: Av. Apoquindo 6410, Of. 1004
-
----
-
-Desarrollado con ❤️ por Digitalizándonos
-
-
-
-
-
+- Datos de contacto y marca: `src/config.json`
+- Textos SEO, Open Graph y JSON-LD: `index.html`
+- Secciones: `src/components/` (Hero, SectionServices, SectionProcess, SectionAbout, SectionContact, Footer)
+- `public/robots.txt`, `public/sitemap.xml`, `public/og-darmi.png` (imagen para compartir 1200×630)

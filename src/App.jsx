@@ -4,16 +4,10 @@ import IntroSequence from './components/IntroSequence'
 import { INTRO_STAGES } from './components/introStages'
 import Hero from './components/Hero'
 import StripPartners from './components/StripPartners'
-import SectionChannels from './components/SectionChannels'
-import SectionSkills from './components/SectionSkills'
+import SectionServices from './components/SectionServices'
 import SectionProcess from './components/SectionProcess'
-import SectionInternalAgents from './components/SectionInternalAgents'
-import SectionIndustries from './components/SectionIndustries'
-import SectionSecurity from './components/SectionSecurity'
-import SectionPlans from './components/SectionPlans'
-import SectionFAQ from './components/SectionFAQ'
 import SectionAbout from './components/SectionAbout'
-import CTAFinal from './components/CTAFinal'
+import SectionContact from './components/SectionContact'
 import Footer from './components/Footer'
 import PopupPolicies from './components/PopupPolicies'
 import { FaWhatsapp } from 'react-icons/fa'
@@ -33,20 +27,15 @@ function App() {
   return (
     <div className="relative min-h-screen bg-white text-ink">
       <Navbar introProgress={introProgress} />
-      <IntroSequence onProgressChange={setIntroProgress} />
-      <Hero />
-      <StripPartners variant="partners" />
-      <SectionChannels />
-      <SectionSkills />
-      <SectionProcess />
-      <StripPartners variant="integrations" />
-      <SectionInternalAgents />
-      <SectionIndustries />
-      <SectionSecurity />
-      <SectionPlans />
-      <SectionFAQ />
-      <SectionAbout />
-      <CTAFinal />
+      <main>
+        <IntroSequence onProgressChange={setIntroProgress} />
+        <Hero />
+        <StripPartners />
+        <SectionServices />
+        <SectionProcess />
+        <SectionAbout />
+        <SectionContact />
+      </main>
       <Footer openPolicy={openPolicy} />
       {showPolicy && (
         <PopupPolicies type={policyType} onClose={() => setShowPolicy(false)} />

@@ -1,4 +1,9 @@
 {
+  "brand": {
+    "name": "Darmi",
+    "tagline": "IA aplicada a procesos",
+    "site_url": "https://www.darmi.cl"
+  },
   "colors": {
     "primary": "#0a5cff",
     "secondary": "#00c2d4",
@@ -10,13 +15,8 @@
     "body": "Inter"
   },
   "contact": {
-    "whatsapp_url": "https://wa.me/56951855951?text=Hola,%20quiero%20una%20demo%20de%20un%20agente%20IA",
-    "phone": "+56 9 5185 5951",
-    "email": "info@digitalizandonos.cl",
-    "address": "Av. Apoquindo 6410, Of. 1004, Las Condes"
-  },
-  "socials": {
-    "instagram": "https://www.instagram.com/digitalizandonos.cl",
-    "linkedin": ""
+    "whatsapp_url": "https://wa.me/56994046002?text=Hola%20Darmi%2C%20quiero%20conversar%20sobre%20un%20proyecto",
+    "phone": "+56 9 9404 6002",
+    "email": "contacto@darmi.cl"
   }
 }

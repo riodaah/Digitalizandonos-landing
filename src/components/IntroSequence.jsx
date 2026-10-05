@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { interpolate } from 'flubber'
-import { FaWhatsapp, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import { FaRobot, FaCogs, FaUsers } from 'react-icons/fa'
 import { introStageOf } from './introStages'
 import styles from './IntroSequence.module.css'
 
@@ -37,9 +37,9 @@ const PHASES = {
 const CHANNEL_STAGGER = 0.04
 
 const CHANNELS = [
-  { key: 'wa', icon: <FaWhatsapp />, label: 'WhatsApp', cls: 'chipA' },
-  { key: 'ig', icon: <FaInstagram />, label: 'Instagram', cls: 'chipB' },
-  { key: 'mail', icon: <FaEnvelope />, label: 'Correo', cls: 'chipC' },
+  { key: 'auto', icon: <FaCogs />, label: 'Automatización', cls: 'chipA' },
+  { key: 'ia', icon: <FaRobot />, label: 'Agentes IA', cls: 'chipB' },
+  { key: 'crm', icon: <FaUsers />, label: 'CRM', cls: 'chipC' },
 ]
 
 const BG_START = [6, 10, 18]
@@ -265,7 +265,7 @@ const IntroSequence = ({ onProgressChange }) => {
       id="home"
       ref={sectionRef}
       className={styles.section}
-      aria-label="Presentación de Digitalizándonos"
+      aria-label="Presentación de Darmi"
     >
       <div ref={stickyRef} className={styles.sticky}>
         <div ref={auroraRef} className={styles.aurora} aria-hidden="true" />
@@ -355,8 +355,8 @@ const IntroSequence = ({ onProgressChange }) => {
           ))}
 
           <div ref={wordmarkRef} className={styles.wordmark}>
-            <p className={styles.brand}>Digitalizándonos</p>
-            <p className={styles.tagline}>Implementamos Agentes IA</p>
+            <p className={styles.brand}>Darmi</p>
+            <p className={styles.tagline}>IA aplicada a procesos</p>
           </div>
         </div>
 

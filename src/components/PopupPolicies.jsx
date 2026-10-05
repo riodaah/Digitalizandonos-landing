@@ -15,7 +15,7 @@ const PopupPolicies = ({ type, onClose }) => {
       title: 'Política de Privacidad',
       content: `
         <h3>1. Información que recopilamos</h3>
-        <p>En Digitalizándonos recopilamos la información necesaria para proporcionar nuestros servicios de agentes de inteligencia artificial y automatización.</p>
+        <p>En Darmi recopilamos la información necesaria para prestar nuestros servicios de automatización, agentes de inteligencia artificial e implementación de CRM.</p>
         
         <h3>2. Uso de la información</h3>
         <p>Utilizamos tu información para:</p>
@@ -26,10 +26,10 @@ const PopupPolicies = ({ type, onClose }) => {
         </ul>
         
         <h3>3. Protección de datos e inteligencia artificial</h3>
-        <p>Implementamos medidas de seguridad para proteger tu información personal. La información de tu empresa y de tus clientes (conversaciones, documentos, bases de datos) se utiliza exclusivamente para la operación de tu agente. <strong>Jamás entrenamos modelos de inteligencia artificial con tus datos confidenciales.</strong></p>
+        <p>Implementamos medidas de seguridad para proteger tu información personal. La información de tu empresa y de tus clientes (conversaciones, documentos, bases de datos) se utiliza exclusivamente para operar las soluciones que implementamos para ti. <strong>Jamás entrenamos modelos de inteligencia artificial con tus datos confidenciales.</strong></p>
         
         <h3>4. Contacto</h3>
-        <p>Para consultas sobre privacidad: info@digitalizandonos.cl</p>
+        <p>Para consultas sobre privacidad: contacto@darmi.cl</p>
       `
     },
     terms: {
@@ -39,16 +39,17 @@ const PopupPolicies = ({ type, onClose }) => {
         <p>Al usar nuestros servicios, aceptas estos términos y condiciones.</p>
         
         <h3>2. Servicios</h3>
-        <p>Digitalizándonos ofrece:</p>
+        <p>Darmi ofrece:</p>
         <ul>
-          <li>Agentes de inteligencia artificial para WhatsApp, Instagram y correo</li>
-          <li>Agentes de automatización de procesos internos</li>
-          <li>Integraciones con CRM, ERP, APIs y bases de datos</li>
-          <li>Implementación, soporte y mejora continua mensual</li>
+          <li>Automatización de procesos</li>
+          <li>Agentes de inteligencia artificial para WhatsApp, Instagram, web y correo</li>
+          <li>Implementación de CRM</li>
+          <li>Integraciones con ERP, APIs, bases de datos y dashboards</li>
+          <li>Soporte y mejora continua</li>
         </ul>
         
-        <h3>3. Tarifas y planes</h3>
-        <p>Los servicios se contratan mediante una implementación inicial única y una suscripción mensual según el plan elegido. Los planes no tienen contrato de permanencia y consideran un volumen de conversaciones mensuales; si se supera, se acordará el ajuste de plan con el cliente.</p>
+        <h3>3. Tarifas</h3>
+        <p>Las condiciones comerciales de cada servicio se definen en la propuesta o contrato acordado con cada cliente.</p>
         
         <h3>4. Propiedad intelectual</h3>
         <p>El contenido y código desarrollado permanece bajo propiedad de acuerdo a lo especificado en cada contrato.</p>
