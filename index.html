@@ -112,6 +112,17 @@
     }
     </script>
 
+    <style>
+      /* Fondo oscuro desde el primer pintado: coincide con la intro y evita el destello blanco. */
+      html, body { background: #060a12; margin: 0; }
+      .seo-fallback { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+    </style>
+    <noscript>
+      <style>
+        html, body { background: #fff; }
+        .seo-fallback { position: static; width: auto; height: auto; overflow: visible; clip: auto; clip-path: none; white-space: normal; font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+      </style>
+    </noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -123,8 +134,9 @@
     <!-- End Google Tag Manager (noscript) -->
     
     <div id="root">
-      <!-- Contenido de respaldo para buscadores y navegadores sin JavaScript; React lo reemplaza al cargar. -->
-      <main style="font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px">
+      <!-- Contenido de respaldo para buscadores: queda oculto a la vista (así no parpadea antes
+           de que cargue la intro) y React lo reemplaza al montar. -->
+      <main class="seo-fallback">
         <h1>Darmi — IA aplicada a los procesos de tu empresa</h1>
         <p>Agencia chilena de automatización con IA. Automatizamos tareas, implementamos agentes de IA y ponemos en marcha tu CRM.</p>
         <h2>Servicios</h2>

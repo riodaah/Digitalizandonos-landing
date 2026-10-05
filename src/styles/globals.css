@@ -6,7 +6,7 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: #ffffff;
+  background: #060a12; /* igual a la intro; las secciones tienen su propio fondo blanco */
   color: #0e1726;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;

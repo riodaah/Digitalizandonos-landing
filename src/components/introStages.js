@@ -1,7 +1,7 @@
 export const INTRO_STAGES = {
-  bar: 0.91,
-  cta: 0.93,
-  menu: 0.96,
+  bar: 0.95,
+  cta: 0.96,
+  menu: 0.97,
   floating: 0.98,
 }
 
