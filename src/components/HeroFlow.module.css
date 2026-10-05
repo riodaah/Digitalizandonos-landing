@@ -1,0 +1,102 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #060a12;
+}
+
+.aurora {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(760px 520px at 15% 0%, rgba(10, 92, 255, 0.3), transparent 62%),
+    radial-gradient(680px 480px at 88% 90%, rgba(0, 194, 212, 0.2), transparent 64%);
+  pointer-events: none;
+}
+
+.caption {
+  text-align: center;
+  font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* ---- La D ---- */
+.trace { opacity: var(--o, 1); }
+.solid { opacity: var(--o, 0); filter: drop-shadow(0 0 40px rgba(10, 92, 255, 0.45)); }
+.origin { opacity: var(--o, 0); }
+
+/* ---- Flujo ---- */
+.segment { stroke: rgba(255, 255, 255, 0.16); }
+.trail { opacity: var(--o, 0); }
+.comet { opacity: var(--o, 0); }
+
+.node { opacity: var(--appear, 0); }
+
+.nodeCore {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(calc(0.6 + 0.4 * var(--appear, 0)));
+  transition: transform 0.25s ease;
+}
+.hit { fill: transparent; }
+.nodeBase {
+  fill: rgba(255, 255, 255, 0.05);
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 2;
+}
+.nodeLit {
+  opacity: var(--lit, 0);
+  filter: drop-shadow(0 0 22px rgba(0, 194, 212, 0.55));
+  transition: filter 0.25s ease;
+}
+.nodeIcon { color: rgba(255, 255, 255, calc(0.45 + 0.55 * var(--lit, 0))); }
+.nodeLabel {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 600;
+  fill: rgba(255, 255, 255, calc(0.4 + 0.6 * var(--lit, 0)));
+}
+.nodeHint {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 600;
+  fill: #7fe3ee;
+  opacity: calc(0.55 * var(--lit, 0));
+  transition: opacity 0.25s ease;
+}
+
+/* ---- Interacción ---- */
+.nodeLink { cursor: pointer; outline: none; }
+.nodeLink:hover .nodeCore,
+.nodeLink:focus-visible .nodeCore {
+  transform: scale(1.14);
+}
+.nodeLink:hover .nodeLit,
+.nodeLink:focus-visible .nodeLit {
+  filter: drop-shadow(0 0 34px rgba(0, 194, 212, 0.9));
+}
+.nodeLink:hover .nodeHint,
+.nodeLink:focus-visible .nodeHint {
+  opacity: 1;
+}
+.nodeLink:focus-visible .nodeBase {
+  stroke: #7fe3ee;
+  stroke-width: 4;
+}
+.nodeLink:hover .origin,
+.nodeLink:focus-visible .origin {
+  filter: drop-shadow(0 0 20px rgba(10, 92, 255, 0.8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nodeCore, .nodeLit, .nodeHint { transition: none; }
+}

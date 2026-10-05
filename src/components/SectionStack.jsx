@@ -92,7 +92,7 @@ const SectionStack = () => (
 
       {/* Pipedrive destacado */}
       <ScrollReveal className="max-w-[1080px] mx-auto mt-14">
-        <article className="relative overflow-hidden bg-white border border-line rounded-[26px] shadow-card p-8 md:p-10 grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-12 items-center">
+        <article id="pipedrive" className="link-target relative overflow-hidden bg-white border border-line rounded-[26px] shadow-card p-8 md:p-10 grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-12 items-center">
           <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg,#0a5cff,#00c2d4)' }} />
           <div>
             <span className="w-14 h-14 rounded-[16px] text-white text-[24px] flex items-center justify-center"

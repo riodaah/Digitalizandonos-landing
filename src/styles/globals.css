@@ -4,6 +4,14 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 96px; }
+
+/* Destaca la tarjeta a la que se llega desde un paso del hero */
+@keyframes targetGlow {
+  0%, 100% { box-shadow: 0 6px 24px rgba(14,23,38,.08); border-color: #e6eaf1; }
+  25%, 60% { box-shadow: 0 0 0 4px rgba(10,92,255,.25), 0 18px 40px rgba(10,92,255,.18); border-color: #0a5cff; }
+}
+.link-target:target { animation: targetGlow 2.4s ease 0.4s; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: #060a12; /* igual a la intro; las secciones tienen su propio fondo blanco */

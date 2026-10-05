@@ -4,24 +4,28 @@ import ScrollReveal from './ScrollReveal'
 const SERVICES = [
   {
     icon: <FaCogs />,
+    id: 'servicio-automatizacion',
     title: 'Automatización de procesos',
     text: 'Eliminamos tareas repetitivas: correos, planillas, reportes, aprobaciones y traspaso de datos entre sistemas.',
     tags: ['n8n', 'Make', 'Python'],
   },
   {
     icon: <FaRobot />,
+    id: 'servicio-agentes',
     title: 'Agentes de IA',
     text: 'Agentes que atienden, cotizan y agendan en WhatsApp, Instagram, web y correo, con la información de tu negocio.',
     tags: ['WhatsApp', 'Web', 'Correo'],
   },
   {
     icon: <FaUsers />,
+    id: 'servicio-crm',
     title: 'Implementación de Pipedrive CRM',
     text: 'Configuramos Pipedrive, migramos tus datos, automatizamos el seguimiento de ventas y capacitamos a tu equipo comercial.',
     tags: ['Pipedrive', 'Embudos', 'API'],
   },
   {
     icon: <FaPlug />,
+    id: 'servicio-integraciones',
     title: 'Integraciones a medida',
     text: 'Conectamos tu ERP, APIs y bases de datos, y construimos dashboards o desarrollos cuando no existe una herramienta que lo resuelva.',
     tags: ['APIs', 'ERP', 'Dashboards'],
@@ -42,7 +46,7 @@ const SectionServices = () => (
       <div className="grid sm:grid-cols-2 gap-6 mt-14 max-w-[980px] mx-auto">
         {SERVICES.map((s, i) => (
           <ScrollReveal key={s.title} delay={i * 0.08}>
-            <article className="h-full bg-white border border-line rounded-[22px] p-7 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+            <article id={s.id} className="link-target h-full bg-white border border-line rounded-[22px] p-7 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300">
               <span className="w-12 h-12 rounded-[14px] text-white text-[20px] flex items-center justify-center"
                     style={{ background: 'linear-gradient(120deg,#0a5cff,#00c2d4)' }}>{s.icon}</span>
               <h3 className="text-[21px] font-bold mt-5">{s.title}</h3>

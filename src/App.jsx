@@ -1,8 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
-import IntroSequence from './components/IntroSequence'
-import { INTRO_STAGES } from './components/introStages'
-import Hero from './components/Hero'
+import HeroFlow from './components/HeroFlow'
 import StripPartners from './components/StripPartners'
 import SectionServices from './components/SectionServices'
 import SectionStack from './components/SectionStack'
@@ -17,8 +15,18 @@ import config from './config.json'
 function App() {
   const [showPolicy, setShowPolicy] = useState(false)
   const [policyType, setPolicyType] = useState('')
-  const [introProgress, setIntroProgress] = useState(0)
-  const showGlobalActions = introProgress >= INTRO_STAGES.floating
+
+  // El botón flotante de WhatsApp aparece al dejar atrás el hero (ahí ya está "Conversemos").
+  const [pastHero, setPastHero] = useState(false)
+  useEffect(() => {
+    const onScroll = () => {
+      const hero = document.getElementById('home')
+      setPastHero(window.scrollY > (hero ? hero.offsetHeight * 0.6 : 400))
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const openPolicy = (type) => {
     setPolicyType(type)
@@ -27,10 +35,9 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-white text-ink">
-      <Navbar introProgress={introProgress} />
+      <Navbar />
       <main>
-        <IntroSequence onProgressChange={setIntroProgress} />
-        <Hero />
+        <HeroFlow />
         <StripPartners />
         <SectionServices />
         <SectionStack />
@@ -44,7 +51,7 @@ function App() {
       )}
       <a href={config.contact.whatsapp_url} target="_blank" rel="noopener noreferrer"
          aria-label="Escríbenos por WhatsApp"
-         className={`fixed bottom-28 right-6 z-40 w-14 h-14 rounded-full bg-[#25d366] text-white text-[26px] flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,.4)] transition-all duration-500 hover:scale-110 ${showGlobalActions ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
+         className={`fixed bottom-28 right-6 z-40 w-14 h-14 rounded-full bg-[#25d366] text-white text-[26px] flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,.4)] transition-all duration-300 hover:scale-110 ${pastHero ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
         <FaWhatsapp />
       </a>
     </div>
