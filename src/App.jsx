@@ -44,7 +44,7 @@ function App() {
       )}
       <a href={config.contact.whatsapp_url} target="_blank" rel="noopener noreferrer"
          aria-label="Escríbenos por WhatsApp"
-         className={`fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25d366] text-white text-[26px] flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,.4)] transition-all duration-500 hover:scale-110 ${showGlobalActions ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
+         className={`fixed bottom-28 right-6 z-40 w-14 h-14 rounded-full bg-[#25d366] text-white text-[26px] flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,.4)] transition-all duration-500 hover:scale-110 ${showGlobalActions ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
         <FaWhatsapp />
       </a>
     </div>
