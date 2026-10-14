@@ -1,7 +1,8 @@
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import config from '../config.json'
 
-const Footer = ({ openPolicy }) => (
+const Footer = () => (
   <footer className="bg-[#0b1626] text-slate-300">
     <div className="container mx-auto px-6 py-14">
       <div className="grid md:grid-cols-3 gap-10 mb-10">
@@ -22,8 +23,8 @@ const Footer = ({ openPolicy }) => (
             <a href="#stack" className="block text-slate-400 hover:text-white transition-colors">Stack tecnológico</a>
             <a href="#como" className="block text-slate-400 hover:text-white transition-colors">Cómo trabajamos</a>
             <a href="#nosotros" className="block text-slate-400 hover:text-white transition-colors">Nosotros</a>
-            <button onClick={() => openPolicy('privacy')} className="block text-slate-400 hover:text-white transition-colors">Política de privacidad</button>
-            <button onClick={() => openPolicy('terms')} className="block text-slate-400 hover:text-white transition-colors">Términos y condiciones</button>
+            <Link to="/politicas-de-privacidad" className="block text-slate-400 hover:text-white transition-colors">Política de privacidad</Link>
+            <Link to="/terminos-y-condiciones" className="block text-slate-400 hover:text-white transition-colors">Términos y condiciones</Link>
           </div>
         </div>
 
