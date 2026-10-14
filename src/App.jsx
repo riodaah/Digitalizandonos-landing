@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import HeroFlow from './components/HeroFlow'
 import StripPartners from './components/StripPartners'
@@ -8,15 +9,13 @@ import SectionProcess from './components/SectionProcess'
 import SectionAbout from './components/SectionAbout'
 import SectionContact from './components/SectionContact'
 import Footer from './components/Footer'
-import PopupPolicies from './components/PopupPolicies'
+import CookieBanner from './components/CookieBanner'
+import PoliticasPrivacidad from './pages/PoliticasPrivacidad'
+import TerminosCondiciones from './pages/TerminosCondiciones'
 import { FaWhatsapp } from 'react-icons/fa'
 import config from './config.json'
 
-function App() {
-  const [showPolicy, setShowPolicy] = useState(false)
-  const [policyType, setPolicyType] = useState('')
-
-  // El botón flotante de WhatsApp aparece al dejar atrás el hero (ahí ya está "Conversemos").
+function HomePage() {
   const [pastHero, setPastHero] = useState(false)
   useEffect(() => {
     const onScroll = () => {
@@ -27,11 +26,6 @@ function App() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  const openPolicy = (type) => {
-    setPolicyType(type)
-    setShowPolicy(true)
-  }
 
   return (
     <div className="relative min-h-screen bg-white text-ink">
@@ -45,16 +39,26 @@ function App() {
         <SectionAbout />
         <SectionContact />
       </main>
-      <Footer openPolicy={openPolicy} />
-      {showPolicy && (
-        <PopupPolicies type={policyType} onClose={() => setShowPolicy(false)} />
-      )}
+      <Footer />
       <a href={config.contact.whatsapp_url} target="_blank" rel="noopener noreferrer"
          aria-label="Escríbenos por WhatsApp"
          className={`fixed bottom-28 right-6 z-40 w-14 h-14 rounded-full bg-[#25d366] text-white text-[26px] flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,.4)] transition-all duration-300 hover:scale-110 ${pastHero ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
         <FaWhatsapp />
       </a>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/politicas-de-privacidad" element={<PoliticasPrivacidad />} />
+        <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
+      </Routes>
+      <CookieBanner />
+    </>
   )
 }
 
