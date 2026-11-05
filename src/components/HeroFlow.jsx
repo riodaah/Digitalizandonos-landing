@@ -259,7 +259,7 @@ const HeroFlow = () => {
           para que tu equipo dedique su tiempo a lo que de verdad importa.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-7">
-          <a href={config.contact.whatsapp_url} onClick={openWhatsApp} className="btn-primary">
+          <a href={config.contact.whatsapp_url} onClick={(e) => openWhatsApp(e, 'hero')} className="btn-primary">
             <FaWhatsapp /> Conversemos
           </a>
           <a href="#servicios"

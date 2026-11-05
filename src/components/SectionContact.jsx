@@ -17,7 +17,7 @@ const SectionContact = () => (
               Cuéntanos qué proceso quieres mejorar y te respondemos a la brevedad.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={config.contact.whatsapp_url} onClick={openWhatsApp}
+              <a href={config.contact.whatsapp_url} onClick={(e) => openWhatsApp(e, 'contacto')}
                  className="inline-flex items-center justify-center gap-2 font-semibold text-[15px] px-7 py-3.5 rounded-full bg-white text-primary-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl">
                 <FaWhatsapp /> {config.contact.phone}
               </a>

@@ -1,6 +1,7 @@
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import config from '../config.json'
+import { trackWhatsApp } from '../lib/whatsapp'
 
 const Footer = () => (
   <footer className="bg-[#0b1626] text-slate-300">
@@ -35,6 +36,7 @@ const Footer = () => (
               <FaEnvelope className="text-primary" /> {config.contact.email}
             </a>
             <a href={config.contact.whatsapp_url} target="_blank" rel="noopener noreferrer"
+               onClick={() => trackWhatsApp('footer')}
                className="flex items-center gap-2.5 text-slate-400 hover:text-white transition-colors">
               <FaWhatsapp className="text-primary" /> {config.contact.phone}
             </a>
