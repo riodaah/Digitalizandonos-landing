@@ -49,13 +49,13 @@ const Navbar = () => {
               {item.name}
             </a>
           ))}
-          <a href={config.contact.whatsapp_url} onClick={openWhatsApp} className="btn-primary !py-2.5 !px-5 text-[14px]">
+          <a href={config.contact.whatsapp_url} onClick={(e) => openWhatsApp(e, 'navbar')} className="btn-primary !py-2.5 !px-5 text-[14px]">
             Conversemos
           </a>
         </div>
 
         <div className="lg:hidden flex items-center gap-3 ml-auto">
-          <a href={config.contact.whatsapp_url} onClick={openWhatsApp} className="btn-primary !py-2 !px-4 !text-[13px]">
+          <a href={config.contact.whatsapp_url} onClick={(e) => openWhatsApp(e, 'navbar_mobile')} className="btn-primary !py-2 !px-4 !text-[13px]">
             Conversemos
           </a>
           <button className={`text-2xl transition-colors ${dark ? 'text-white' : 'text-ink'}`}

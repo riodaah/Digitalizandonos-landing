@@ -1,12 +1,17 @@
 import config from '../config.json'
 
-// Abre WhatsApp registrando la conversión de Google Ads si está disponible.
-export const openWhatsApp = (e) => {
+// Envía el evento "whatsapp_click" al dataLayer para que GTM dispare
+// la conversión de Google Ads (y GA4). location = qué botón se usó.
+export const trackWhatsApp = (location = 'desconocido') => {
+  if (typeof window === 'undefined') return
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event: 'whatsapp_click', whatsapp_location: location })
+}
+
+// Abre WhatsApp en una pestaña nueva registrando el clic.
+export const openWhatsApp = (e, location) => {
   if (e) e.preventDefault()
-  const url = config.contact.whatsapp_url
-  if (typeof window !== 'undefined' && window.gtag_report_conversion) {
-    window.gtag_report_conversion(url)
-  } else {
-    window.open(url, '_blank', 'noopener,noreferrer')
-  }
+  const loc = location || e?.currentTarget?.dataset?.waLocation || 'cta'
+  trackWhatsApp(loc)
+  window.open(config.contact.whatsapp_url, '_blank', 'noopener,noreferrer')
 }

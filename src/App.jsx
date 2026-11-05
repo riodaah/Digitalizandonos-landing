@@ -14,6 +14,7 @@ import PoliticasPrivacidad from './pages/PoliticasPrivacidad'
 import TerminosCondiciones from './pages/TerminosCondiciones'
 import { FaWhatsapp } from 'react-icons/fa'
 import config from './config.json'
+import { trackWhatsApp } from './lib/whatsapp'
 
 function HomePage() {
   const [pastHero, setPastHero] = useState(false)
@@ -41,6 +42,7 @@ function HomePage() {
       </main>
       <Footer />
       <a href={config.contact.whatsapp_url} target="_blank" rel="noopener noreferrer"
+         onClick={() => trackWhatsApp('flotante')}
          aria-label="Escríbenos por WhatsApp"
          className={`fixed bottom-28 right-6 z-40 w-14 h-14 rounded-full bg-[#25d366] text-white text-[26px] flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,.4)] transition-all duration-300 hover:scale-110 ${pastHero ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
         <FaWhatsapp />
