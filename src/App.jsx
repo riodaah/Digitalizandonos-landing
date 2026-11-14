@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import HeroFlow from './components/HeroFlow'
 import StripPartners from './components/StripPartners'
+import SectionClients from './components/SectionClients'
 import SectionServices from './components/SectionServices'
 import SectionStack from './components/SectionStack'
 import SectionProcess from './components/SectionProcess'
@@ -34,6 +35,7 @@ function HomePage() {
       <main>
         <HeroFlow />
         <StripPartners />
+        <SectionClients />
         <SectionServices />
         <SectionStack />
         <SectionProcess />
