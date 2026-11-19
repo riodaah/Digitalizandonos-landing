@@ -4,6 +4,7 @@ import config from '../config.json'
 import { openWhatsApp } from '../lib/whatsapp'
 
 const menuItems = [
+  { name: 'IA para empresas', href: '/ia-para-empresas' },
   { name: 'Clientes', href: '#clientes' },
   { name: 'Servicios', href: '#servicios' },
   { name: 'Stack', href: '#stack' },

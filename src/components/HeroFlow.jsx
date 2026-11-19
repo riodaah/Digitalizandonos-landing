@@ -249,7 +249,7 @@ const HeroFlow = () => {
 
       <div className="container mx-auto px-6 relative pt-28 md:pt-28 text-center">
         <span className="inline-block text-[13px] font-semibold tracking-[0.12em] uppercase text-[#7fe3ee] mb-3">
-          Darmi · Agencia de automatización con IA
+          Darmi · IA para empresas
         </span>
         <h1 className="text-[34px] md:text-[50px] font-extrabold leading-[1.08] text-white max-w-[1000px] mx-auto">
           IA aplicada a los <span className="gradient-text">procesos</span> de tu empresa
@@ -262,9 +262,9 @@ const HeroFlow = () => {
           <a href={config.contact.whatsapp_url} onClick={(e) => openWhatsApp(e, 'hero')} className="btn-primary">
             <FaWhatsapp /> Conversemos
           </a>
-          <a href="#servicios"
+          <a href="/ia-para-empresas"
              className="inline-flex items-center justify-center gap-2 font-semibold text-[15px] px-6 py-3 rounded-full border border-white/25 text-white transition-all duration-200 hover:bg-white/10 hover:-translate-y-0.5">
-            Ver servicios
+            Diagnóstico gratuito
           </a>
         </div>
       </div>

@@ -13,6 +13,8 @@ import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
 import PoliticasPrivacidad from './pages/PoliticasPrivacidad'
 import TerminosCondiciones from './pages/TerminosCondiciones'
+import IAParaEmpresas from './pages/IAParaEmpresas'
+import { captureAttribution } from './lib/lead'
 import { FaWhatsapp } from 'react-icons/fa'
 import config from './config.json'
 import { trackWhatsApp } from './lib/whatsapp'
@@ -54,10 +56,12 @@ function HomePage() {
 }
 
 function App() {
+  useEffect(() => { captureAttribution() }, [])
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/ia-para-empresas" element={<IAParaEmpresas />} />
         <Route path="/politicas-de-privacidad" element={<PoliticasPrivacidad />} />
         <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
       </Routes>
