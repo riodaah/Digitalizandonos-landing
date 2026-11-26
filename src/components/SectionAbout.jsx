@@ -6,7 +6,7 @@ const SectionAbout = () => (
       <ScrollReveal>
         <div className="relative">
           <div className="absolute -inset-3 rounded-[30px] rotate-[-1.5deg]"
-               style={{ background: 'linear-gradient(120deg,rgba(10,92,255,.10),rgba(0,194,212,.10))' }} />
+               style={{ background: 'linear-gradient(120deg,rgba(53,80,224,.10),rgba(198,244,50,.10))' }} />
           <img src="/Images/equipo.png" alt="Equipo de Darmi" loading="lazy"
                className="relative rounded-[24px] w-full object-cover border border-line shadow-card" />
         </div>

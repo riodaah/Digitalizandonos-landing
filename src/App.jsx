@@ -5,6 +5,7 @@ import HeroFlow from './components/HeroFlow'
 import StripPartners from './components/StripPartners'
 import SectionClients from './components/SectionClients'
 import SectionServices from './components/SectionServices'
+import SectionPlans from './components/SectionPlans'
 import SectionStack from './components/SectionStack'
 import SectionProcess from './components/SectionProcess'
 import SectionAbout from './components/SectionAbout'
@@ -39,6 +40,7 @@ function HomePage() {
         <StripPartners />
         <SectionClients />
         <SectionServices />
+        <SectionPlans />
         <SectionStack />
         <SectionProcess />
         <SectionAbout />

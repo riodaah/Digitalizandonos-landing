@@ -93,10 +93,10 @@ const SectionStack = () => (
       {/* Pipedrive destacado */}
       <ScrollReveal className="max-w-[1080px] mx-auto mt-14">
         <article id="pipedrive" className="link-target relative overflow-hidden bg-white border border-line rounded-[26px] shadow-card p-8 md:p-10 grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-12 items-center">
-          <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg,#0a5cff,#00c2d4)' }} />
+          <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg,#3550e0,#c6f432)' }} />
           <div>
             <span className="w-14 h-14 rounded-[16px] text-white text-[24px] flex items-center justify-center"
-                  style={{ background: 'linear-gradient(120deg,#0a5cff,#00c2d4)' }}><FaUsers /></span>
+                  style={{ background: '#0b0f1a', color: '#c6f432' }}><FaUsers /></span>
             <span className="block mt-5 text-[12.5px] font-semibold tracking-[0.12em] uppercase text-primary">CRM de cabecera</span>
             <h3 className="text-[28px] md:text-[34px] font-extrabold mt-1">Pipedrive CRM</h3>
             <p className="text-[16px] text-ink-soft mt-3">
@@ -108,7 +108,7 @@ const SectionStack = () => (
           <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5">
             {PIPEDRIVE_ITEMS.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-[15px] text-ink">
-                <span className="mt-1 w-5 h-5 shrink-0 rounded-full bg-[#eef4ff] text-primary text-[10px] flex items-center justify-center"><FaCheck /></span>
+                <span className="mt-1 w-5 h-5 shrink-0 rounded-full bg-[#eef0fd] text-primary text-[10px] flex items-center justify-center"><FaCheck /></span>
                 {item}
               </li>
             ))}
@@ -121,7 +121,7 @@ const SectionStack = () => (
           <ScrollReveal key={g.title} delay={(i % 3) * 0.08}>
             <article className="h-full bg-white border border-line rounded-[22px] p-6">
               <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-[12px] bg-[#eef4ff] text-primary text-[17px] flex items-center justify-center">{g.icon}</span>
+                <span className="w-10 h-10 rounded-[12px] bg-[#eef0fd] text-primary text-[17px] flex items-center justify-center">{g.icon}</span>
                 <h3 className="text-[18px] font-bold">{g.title}</h3>
               </div>
               <ul className="mt-5 space-y-3">

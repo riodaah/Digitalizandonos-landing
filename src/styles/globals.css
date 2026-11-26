@@ -9,13 +9,13 @@ html { scroll-behavior: smooth; }
 /* Destaca la tarjeta a la que se llega desde un paso del hero */
 @keyframes targetGlow {
   0%, 100% { box-shadow: 0 6px 24px rgba(14,23,38,.08); border-color: #e6eaf1; }
-  25%, 60% { box-shadow: 0 0 0 4px rgba(10,92,255,.25), 0 18px 40px rgba(10,92,255,.18); border-color: #0a5cff; }
+  25%, 60% { box-shadow: 0 0 0 4px rgba(53,80,224,.25), 0 18px 40px rgba(53,80,224,.18); border-color: #3550e0; }
 }
 .link-target:target { animation: targetGlow 2.4s ease 0.4s; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: #060a12; /* igual a la intro; las secciones tienen su propio fondo blanco */
-  color: #0e1726;
+  background: #0b0f1a; /* igual a la intro; las secciones tienen su propio fondo blanco */
+  color: #0b0f1a;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(120deg, #0a5cff, #00c2d4);
+    background: linear-gradient(110deg, #c6f432 0%, #e6ff8f 45%, #c6f432 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -40,13 +40,17 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid #e6eaf1;
   }
   .eyebrow {
-    @apply inline-block text-[13px] font-semibold tracking-[0.12em] uppercase text-primary mb-3;
+    @apply inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.12em] uppercase text-primary mb-3;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 font-semibold text-[15px] px-6 py-3 rounded-full bg-primary text-white transition-all duration-200;
-    box-shadow: 0 6px 18px rgba(10, 92, 255, 0.28);
+    @apply inline-flex items-center justify-center gap-2 font-semibold text-[15px] px-6 py-3 rounded-full bg-lime text-ink transition-all duration-200;
+    box-shadow: 0 6px 22px rgba(198,244,50, 0.35);
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(10, 92, 255, 0.36); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(198,244,50, 0.55); }
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 font-semibold text-[15px] px-6 py-3 rounded-full bg-ink text-white transition-all duration-200;
+  }
+  .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(11,15,26,.28); }
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 font-semibold text-[15px] px-6 py-3 rounded-full border border-line bg-white text-ink transition-all duration-200;
   }
@@ -68,11 +72,11 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   width: 3px;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, #0a5cff, #00c2d4);
+  background: linear-gradient(180deg, #3550e0, #c6f432);
   border-radius: 99px;
   height: 0;
   transition: height 1.1s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 16px rgba(10, 92, 255, 0.35);
+  box-shadow: 0 0 16px rgba(53,80,224, 0.35);
 }
 @media (max-width: 767px) {
   .timeline-line { left: 22px; transform: none; }
@@ -84,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .timeline-step.lit { opacity: 1; transform: none; }
 .timeline-dot {
-  box-shadow: 0 0 0 6px rgba(10, 92, 255, 0.12);
+  box-shadow: 0 0 0 6px rgba(53,80,224, 0.12);
 }
 
 /* ---- Industry bubbles ---- */
@@ -99,8 +103,8 @@ h1, h2, h3, h4, h5, h6 {
 .bubble:hover {
   animation-play-state: paused;
   transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 12px 30px rgba(10, 92, 255, 0.18);
-  border-color: #0a5cff;
+  box-shadow: 0 12px 30px rgba(53,80,224, 0.18);
+  border-color: #3550e0;
 }
 
 /* ---- Ops feed (agentes internos) ---- */
@@ -122,4 +126,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   .bubble { animation: none; }
   .timeline-line { transition: none; }
+}
+
+/* Punto lima antes de cada eyebrow, como en el brochure */
+.eyebrow::before {
+  content: '';
+  width: 7px; height: 7px; border-radius: 99px;
+  background: #c6f432;
+  box-shadow: 0 0 0 3px rgba(198,244,50,.25);
 }

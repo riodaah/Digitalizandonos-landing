@@ -4,7 +4,7 @@ import config from '../config.json'
 import { trackWhatsApp } from '../lib/whatsapp'
 
 const Footer = () => (
-  <footer className="bg-[#0b1626] text-slate-300">
+  <footer className="bg-[#0b0f1a] text-slate-300">
     <div className="container mx-auto px-6 py-14">
       <div className="grid md:grid-cols-3 gap-10 mb-10">
         <div>
@@ -21,6 +21,7 @@ const Footer = () => (
           <h4 className="font-display font-bold text-white mb-4">Darmi</h4>
           <div className="space-y-2.5 text-sm">
             <Link to="/ia-para-empresas" className="block text-slate-400 hover:text-white transition-colors">IA para empresas</Link>
+            <a href="/#planes" className="block text-slate-400 hover:text-white transition-colors">Planes de agentes IA</a>
             <a href="/#servicios" className="block text-slate-400 hover:text-white transition-colors">Servicios</a>
             <a href="/#stack" className="block text-slate-400 hover:text-white transition-colors">Stack tecnológico</a>
             <a href="/#como" className="block text-slate-400 hover:text-white transition-colors">Cómo trabajamos</a>
@@ -34,12 +35,12 @@ const Footer = () => (
           <h4 className="font-display font-bold text-white mb-4">Contacto</h4>
           <div className="space-y-3 text-sm">
             <a href={`mailto:${config.contact.email}`} className="flex items-center gap-2.5 text-slate-400 hover:text-white transition-colors">
-              <FaEnvelope className="text-primary" /> {config.contact.email}
+              <FaEnvelope className="text-lime" /> {config.contact.email}
             </a>
             <a href={config.contact.whatsapp_url} target="_blank" rel="noopener noreferrer"
                onClick={() => trackWhatsApp('footer')}
                className="flex items-center gap-2.5 text-slate-400 hover:text-white transition-colors">
-              <FaWhatsapp className="text-primary" /> {config.contact.phone}
+              <FaWhatsapp className="text-lime" /> {config.contact.phone}
             </a>
             <p className="text-slate-400">Santiago, Chile</p>
           </div>

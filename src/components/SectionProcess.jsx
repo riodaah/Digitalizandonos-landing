@@ -17,7 +17,7 @@ const SectionProcess = () => (
         {STEPS.map((s, i) => (
           <ScrollReveal key={s.title} delay={i * 0.1}>
             <li className="h-full bg-white border border-line rounded-[22px] p-7">
-              <span className="font-display font-extrabold text-[40px] leading-none gradient-text">0{i + 1}</span>
+              <span className="font-display font-extrabold text-[40px] leading-none text-primary">0{i + 1}</span>
               <h3 className="text-[20px] font-bold mt-4">{s.title}</h3>
               <p className="text-[15px] text-ink-soft mt-2">{s.text}</p>
             </li>

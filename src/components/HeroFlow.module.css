@@ -1,15 +1,50 @@
 .section {
   position: relative;
   overflow: hidden;
-  background: #060a12;
+  background: #0b0f1a;
 }
 
 .aurora {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(760px 520px at 15% 0%, rgba(10, 92, 255, 0.3), transparent 62%),
-    radial-gradient(680px 480px at 88% 90%, rgba(0, 194, 212, 0.2), transparent 64%);
+    radial-gradient(760px 520px at 12% 0%, rgba(53,80,224, 0.32), transparent 62%),
+    radial-gradient(680px 480px at 88% 95%, rgba(198,244,50, 0.10), transparent 64%);
+  pointer-events: none;
+}
+
+/* Círculo lima con anillos, como la portada del brochure */
+.orb {
+  position: absolute;
+  top: -330px;
+  right: -270px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 65%, #d9fb5c, #c6f432 55%, #a6dc12);
+  opacity: 0.92;
+  box-shadow:
+    0 0 0 90px rgba(255, 255, 255, 0.025),
+    0 0 0 91px rgba(255, 255, 255, 0.08),
+    0 0 0 220px rgba(255, 255, 255, 0.015),
+    0 0 0 221px rgba(255, 255, 255, 0.06),
+    0 0 120px 40px rgba(198, 244, 50, 0.25);
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .orb { width: 260px; height: 260px; top: -170px; right: -160px; }
+}
+
+/* Rejilla tenue tipo "tech" que se desvanece hacia abajo */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 20%, transparent 70%);
   pointer-events: none;
 }
 
@@ -33,7 +68,7 @@
 
 /* ---- La D ---- */
 .trace { opacity: var(--o, 1); }
-.solid { opacity: var(--o, 0); filter: drop-shadow(0 0 40px rgba(10, 92, 255, 0.45)); }
+.solid { opacity: var(--o, 0); filter: drop-shadow(0 0 40px rgba(53,80,224, 0.45)); }
 .origin { opacity: var(--o, 0); }
 
 /* ---- Flujo ---- */
@@ -57,10 +92,13 @@
 }
 .nodeLit {
   opacity: var(--lit, 0);
-  filter: drop-shadow(0 0 22px rgba(0, 194, 212, 0.55));
+  filter: drop-shadow(0 0 22px rgba(198,244,50, 0.55));
   transition: filter 0.25s ease;
 }
-.nodeIcon { color: rgba(255, 255, 255, calc(0.45 + 0.55 * var(--lit, 0))); }
+.nodeIcon {
+  color: rgba(255, 255, 255, 0.5);
+  color: color-mix(in srgb, #0b0f1a calc(var(--lit, 0) * 100%), rgba(255, 255, 255, 0.5));
+}
 .nodeLabel {
   font-family: Inter, system-ui, sans-serif;
   font-weight: 600;
@@ -69,7 +107,7 @@
 .nodeHint {
   font-family: Inter, system-ui, sans-serif;
   font-weight: 600;
-  fill: #7fe3ee;
+  fill: #d7f86a;
   opacity: calc(0.55 * var(--lit, 0));
   transition: opacity 0.25s ease;
 }
@@ -82,19 +120,19 @@
 }
 .nodeLink:hover .nodeLit,
 .nodeLink:focus-visible .nodeLit {
-  filter: drop-shadow(0 0 34px rgba(0, 194, 212, 0.9));
+  filter: drop-shadow(0 0 34px rgba(198,244,50, 0.9));
 }
 .nodeLink:hover .nodeHint,
 .nodeLink:focus-visible .nodeHint {
   opacity: 1;
 }
 .nodeLink:focus-visible .nodeBase {
-  stroke: #7fe3ee;
+  stroke: #d7f86a;
   stroke-width: 4;
 }
 .nodeLink:hover .origin,
 .nodeLink:focus-visible .origin {
-  filter: drop-shadow(0 0 20px rgba(10, 92, 255, 0.8));
+  filter: drop-shadow(0 0 20px rgba(53,80,224, 0.8));
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -20,7 +20,7 @@ const SectionClients = () => (
             <article className="h-full bg-white border border-line rounded-[22px] p-6 shadow-soft">
               <div className="flex items-center gap-4">
                 <span className="w-12 h-12 shrink-0 rounded-[14px] text-white text-[20px] flex items-center justify-center"
-                      style={{ background: 'linear-gradient(120deg,#0a5cff,#00c2d4)' }}>{c.icon}</span>
+                      style={{ background: '#0b0f1a', color: '#c6f432' }}>{c.icon}</span>
                 <div>
                   <p className="font-display text-[22px] font-extrabold leading-tight text-ink">{c.name}</p>
                   <p className="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink-soft">{c.sector}</p>

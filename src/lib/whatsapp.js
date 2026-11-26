@@ -8,10 +8,17 @@ export const trackWhatsApp = (location = 'desconocido') => {
   window.dataLayer.push({ event: 'whatsapp_click', whatsapp_location: location })
 }
 
+// Arma un enlace de WhatsApp con un mensaje propio (o el mensaje por defecto).
+export const whatsAppUrl = (text) => {
+  if (!text) return config.contact.whatsapp_url
+  const base = config.contact.whatsapp_url.split('?')[0]
+  return `${base}?text=${encodeURIComponent(text)}`
+}
+
 // Abre WhatsApp en una pestaña nueva registrando el clic.
-export const openWhatsApp = (e, location) => {
+export const openWhatsApp = (e, location, text) => {
   if (e) e.preventDefault()
   const loc = location || e?.currentTarget?.dataset?.waLocation || 'cta'
   trackWhatsApp(loc)
-  window.open(config.contact.whatsapp_url, '_blank', 'noopener,noreferrer')
+  window.open(whatsAppUrl(text), '_blank', 'noopener,noreferrer')
 }

@@ -7,6 +7,7 @@ const menuItems = [
   { name: 'IA para empresas', href: '/ia-para-empresas' },
   { name: 'Clientes', href: '#clientes' },
   { name: 'Servicios', href: '#servicios' },
+  { name: 'Planes', href: '#planes' },
   { name: 'Stack', href: '#stack' },
   { name: 'Cómo trabajamos', href: '#como' },
   { name: 'Nosotros', href: '#nosotros' },

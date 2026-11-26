@@ -18,9 +18,9 @@ const TerminosCondiciones = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#060a12] text-white">
+    <div className="min-h-screen bg-[#0b0f1a] text-white">
       {/* Mini navbar */}
-      <nav className="sticky top-0 z-50 bg-[#060a12]/90 backdrop-blur border-b border-white/10 px-6 py-4">
+      <nav className="sticky top-0 z-50 bg-[#0b0f1a]/90 backdrop-blur border-b border-white/10 px-6 py-4">
         <div className="container mx-auto flex items-center gap-4">
           <Link to="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm">
             <FaArrowLeft /> Volver al inicio

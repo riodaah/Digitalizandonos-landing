@@ -246,9 +246,11 @@ const HeroFlow = () => {
   return (
     <section id="home" ref={sectionRef} className={styles.section}>
       <div className={styles.aurora} aria-hidden="true" />
+      <div className={styles.orb} aria-hidden="true" />
+      <div className={styles.grid} aria-hidden="true" />
 
       <div className="container mx-auto px-6 relative pt-28 md:pt-28 text-center">
-        <span className="inline-block text-[13px] font-semibold tracking-[0.12em] uppercase text-[#7fe3ee] mb-3">
+        <span className="inline-block text-[13px] font-semibold tracking-[0.12em] uppercase text-[#d7f86a] mb-3">
           Darmi · IA para empresas
         </span>
         <h1 className="text-[34px] md:text-[50px] font-extrabold leading-[1.08] text-white max-w-[1000px] mx-auto">
@@ -283,18 +285,18 @@ const HeroFlow = () => {
         >
           <defs>
             <linearGradient id="flowFill" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#0a5cff" />
-              <stop offset="100%" stopColor="#00c2d4" />
+              <stop offset="0%" stopColor="#d9fb5c" />
+              <stop offset="100%" stopColor="#a6dc12" />
             </linearGradient>
             <linearGradient id="flowLine" gradientUnits="userSpaceOnUse"
               x1={node0.x} y1={node0.y} x2={L.nodes[5].x} y2={L.nodes[5].y}>
-              <stop offset="0%" stopColor="#0a5cff" />
-              <stop offset="100%" stopColor="#00c2d4" />
+              <stop offset="0%" stopColor="#3550e0" />
+              <stop offset="100%" stopColor="#c6f432" />
             </linearGradient>
             <radialGradient id="flowComet">
               <stop offset="0%" stopColor="#ffffff" />
-              <stop offset="35%" stopColor="#7fe3ee" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#00c2d4" stopOpacity="0" />
+              <stop offset="35%" stopColor="#d7f86a" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#c6f432" stopOpacity="0" />
             </radialGradient>
             <filter id="flowBlur" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="6" />
@@ -310,7 +312,7 @@ const HeroFlow = () => {
                   className={styles.segment} fill="none" strokeWidth="3" />
           ))}
           <path ref={litRef} d={fullPath} fill="none" stroke="url(#flowLine)" strokeWidth="4" strokeLinecap="round" />
-          <path ref={trailRef} d={fullPath} className={styles.trail} fill="none" stroke="#7fe3ee"
+          <path ref={trailRef} d={fullPath} className={styles.trail} fill="none" stroke="#d7f86a"
                 strokeWidth="8" strokeLinecap="round" filter="url(#flowBlur)" />
 
           {STEPS.map((step, i) => {
@@ -323,7 +325,7 @@ const HeroFlow = () => {
                  aria-label={`${step.label}: ir a ${step.hint}`}>
                 <g transform={`translate(${p.x} ${p.y})`}>
                   <circle ref={(el) => { pingRefs.current[i] = el }} r={L.r} fill="none"
-                          stroke="#7fe3ee" strokeWidth="3" style={{ opacity: 0 }} />
+                          stroke="#d7f86a" strokeWidth="3" style={{ opacity: 0 }} />
                   <g ref={(el) => { nodeRefs.current[i] = el }} className={styles.node}>
                     <g className={styles.nodeCore}>
                       <circle className={styles.hit} r={L.r * 1.5} />
@@ -348,7 +350,7 @@ const HeroFlow = () => {
           {/* La D: se dibuja al centro y se convierte en el primer paso */}
           <a href={ORIGIN.href} className={styles.nodeLink} aria-label="Darmi: ir a Nosotros">
             <circle ref={originRef} className={styles.origin} cx={node0.x} cy={node0.y} r={L.r}
-                    fill="rgba(10,92,255,0.14)" stroke="url(#flowFill)" strokeWidth="3" />
+                    fill="rgba(198,244,50,0.10)" stroke="url(#flowFill)" strokeWidth="3" />
             <g ref={dGroupRef}
                transform={`translate(${L.d.x} ${L.d.y}) scale(${L.d.s}) translate(${-D_CX} ${-D_CY})`}>
               <g ref={traceRef} className={styles.trace}>

@@ -48,12 +48,12 @@ const SectionServices = () => (
           <ScrollReveal key={s.title} delay={i * 0.08}>
             <article id={s.id} className="link-target h-full bg-white border border-line rounded-[22px] p-7 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300">
               <span className="w-12 h-12 rounded-[14px] text-white text-[20px] flex items-center justify-center"
-                    style={{ background: 'linear-gradient(120deg,#0a5cff,#00c2d4)' }}>{s.icon}</span>
+                    style={{ background: '#0b0f1a', color: '#c6f432' }}>{s.icon}</span>
               <h3 className="text-[21px] font-bold mt-5">{s.title}</h3>
               <p className="text-[15.5px] text-ink-soft mt-2.5">{s.text}</p>
               <div className="flex flex-wrap gap-2 mt-5">
                 {s.tags.map((t) => (
-                  <span key={t} className="text-[12.5px] font-semibold text-primary-ink bg-[#eef4ff] border border-[#d8e5ff] px-3 py-1 rounded-full">{t}</span>
+                  <span key={t} className="text-[12.5px] font-semibold text-primary-ink bg-[#eef0fd] border border-[#d6dcfa] px-3 py-1 rounded-full">{t}</span>
                 ))}
               </div>
             </article>

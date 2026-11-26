@@ -67,9 +67,9 @@ const IAParaEmpresas = () => {
 
       <main>
         <section className="relative overflow-hidden text-white pt-32 pb-20 md:pt-36 md:pb-24"
-                 style={{ background: 'radial-gradient(1200px 500px at 70% 0%, rgba(10,92,255,.35), transparent 60%), linear-gradient(180deg,#050b17 0%,#08172e 100%)' }}>
+                 style={{ background: 'radial-gradient(1200px 500px at 70% 0%, rgba(53,80,224,.35), transparent 60%), linear-gradient(180deg,#0b0f1a 0%,#121829 100%)' }}>
           <div className="container mx-auto px-6 text-center max-w-[900px]">
-            <span className="inline-block text-[13px] font-semibold tracking-[0.12em] uppercase text-[#7fe3ee] mb-3">
+            <span className="inline-block text-[13px] font-semibold tracking-[0.12em] uppercase text-[#d7f86a] mb-3">
               IA para empresas
             </span>
             <h1 className="text-[34px] md:text-[52px] font-extrabold leading-[1.08] text-white">
@@ -106,7 +106,7 @@ const IAParaEmpresas = () => {
                 <ScrollReveal key={u.title} delay={i * 0.06}>
                   <article className="h-full bg-white border border-line rounded-[22px] p-7 shadow-soft">
                     <span className="w-12 h-12 rounded-[14px] text-white text-[20px] flex items-center justify-center"
-                          style={{ background: 'linear-gradient(120deg,#0a5cff,#00c2d4)' }}>{u.icon}</span>
+                          style={{ background: '#0b0f1a', color: '#c6f432' }}>{u.icon}</span>
                     <h3 className="text-[20px] font-bold mt-5">{u.title}</h3>
                     <p className="text-[15.5px] text-ink-soft mt-2.5">{u.text}</p>
                   </article>
